@@ -325,7 +325,7 @@ section { padding: 100px 48px; }
 
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(3, 160px);
+  grid-template-columns: repeat(3, 180px);
   justify-content: center;
   gap: 32px;
   max-width: 1000px;
@@ -333,10 +333,32 @@ section { padding: 100px 48px; }
 }
 
 .team-card {
-  width: 160px;
+  width: 180px;
   text-align: center;
   cursor: pointer;
   transition: transform 0.2s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.team-card .team-photo {
+  flex-shrink: 0;
+}
+
+.team-card .team-role {
+  min-height: 2.4em;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  margin-top: 14px;
+}
+
+.team-card .team-name {
+  min-height: 2.2em;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
 }
 
 .team-card:hover { transform: translateY(-4px); }
