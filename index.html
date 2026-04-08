@@ -498,6 +498,15 @@ section { padding: 100px 48px; }
 /* Open Positions */
 .positions-section { max-width: 800px; margin: 0 auto; }
 
+.positions-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+@media (max-width: 600px) {
+  .positions-grid { grid-template-columns: 1fr; }
+}
+
 .position-card {
   background: var(--gray-dark);
   border: 1px solid rgba(123,47,190,0.2);
@@ -1131,6 +1140,7 @@ footer p {
     <li class="dropdown">
       <a href="#" onclick="showPage('about');return false;">About ▾</a>
       <div class="dropdown-menu">
+        <a href="#" onclick="showPage('about');setTimeout(function(){var el=document.getElementById('open-positions');if(el)el.scrollIntoView({behavior:'smooth'});},100);return false;">Apply</a>
         <a href="#" onclick="showPage('about','story');return false;">Our Story</a>
       </div>
     </li>
@@ -1151,6 +1161,11 @@ footer p {
 <div id="page-home" class="page active" style="padding-top:0;">
   <section id="home">
     <img src="MOMENTUM_FULL_LOGO" alt="Momentum at Purdue" class="hero-logo">
+
+    <div style="display:flex;flex-direction:column;align-items:center;gap:12px;animation:fadeUp 1s 0.3s ease both;margin-bottom:40px;">
+      <a href="https://purdue.ca1.qualtrics.com/jfe/form/SV_2mbSYYqtgHahGnA" target="_blank" class="hero-btn">Director Applications Open</a>
+      <span style="font-family:'Figtree',sans-serif;font-size:13px;color:rgba(255,255,255,0.45);">Priority Deadline: Apr 17th, 11:59 PM</span>
+    </div>
 
     <div class="about-blurb">
       <p>At Purdue Momentum, we help Purdue students build <strong>real-world skills</strong> through hands-on projects that reflect what's happening in industry right now. Whether you're into <strong>fintech, engineering, consulting, or software development</strong>, we're here to support you with resources, mentorship, and a community that's all about learning by doing. We're all about connecting students with opportunities that cross domains and encourage <strong>creative, practical problem-solving</strong>.</p>
@@ -1228,7 +1243,7 @@ footer p {
           What are the open roles?
           <span class="faq-icon">+</span>
         </button>
-        <div class="faq-answer">We're currently recruiting for Project Managers, who lead project teams within each pillar and drive deliverables, and General Members, who contribute to teams and build technical or leadership skills through hands-on work. For full details, see the Roles & Requirements guide linked on the About page.</div>
+        <div class="faq-answer">Director applications are currently open — Directors oversee one of our three pillars (Finance, Engineering, or Software) and lead its project teams. Project Manager and General Member applications will open later this semester. For full details, visit the About page.</div>
       </div>
       <div class="faq-item">
         <button class="faq-question" onclick="toggleFaq(this)">
@@ -1265,68 +1280,112 @@ footer p {
       <h3 style="font-family:'Montserrat',sans-serif;font-size:14px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gray);text-align:center;margin-bottom:40px;">Executive Board</h3>
       <div class="team-grid">
         <div class="team-card" onclick="openModal(this,'Tanek Malhotra','President','President of Momentum at Purdue.','#')">
-          <div class="team-photo"><img loading="lazy" decoding="async" src="headshots/tan.png" alt="Tanek Malhotra"></div>
+          <div class="team-photo"><img loading="lazy" decoding="async" src="Downloads/website headshots/tan.png" alt="Tanek Malhotra"></div>
           <div class="team-role">President</div>
           <div class="team-name">Tanek Malhotra</div>
         </div>
         <div class="team-card" onclick="openModal(this,'Marina Mercedes San Martin Rossano','Co-President','Co-President of Momentum at Purdue.','https://www.linkedin.com/in/marina-sanmartin/')">
-          <div class="team-photo"><img loading="lazy" decoding="async" src="headshots/marina.png" alt="Marina Mercedes San Martin Rossano"></div>
+          <div class="team-photo"><img loading="lazy" decoding="async" src="Downloads/website headshots/marina.png" alt="Marina Mercedes San Martin Rossano"></div>
           <div class="team-role">Co-President</div>
           <div class="team-name">Marina Mercedes San Martin Rossano</div>
         </div>
         <div class="team-card" onclick="openModal(this,'Carolina Sugane Hamada','Treasurer','Treasurer of Momentum at Purdue.','#')">
-          <div class="team-photo"><img loading="lazy" decoding="async" src="headshots/caro.png" alt="Carolina Sugane Hamada"></div>
+          <div class="team-photo"><img loading="lazy" decoding="async" src="Downloads/website headshots/caro.png" alt="Carolina Sugane Hamada"></div>
           <div class="team-role">Treasurer</div>
           <div class="team-name">Carolina Sugane Hamada</div>
         </div>
         <div class="team-card" onclick="openModal(this,'Aditi Athreyas','VP of External Affairs','Major: Industrial Engineering &amp; Integrated Business | Minor: Finance | Graduating: Fall 2028','https://www.linkedin.com/in/aditiathreyas/')">
-          <div class="team-photo"><img loading="lazy" decoding="async" src="headshots/aditi.png" alt="Aditi Athreyas"></div>
+          <div class="team-photo"><img loading="lazy" decoding="async" src="Downloads/website headshots/aditi.png" alt="Aditi Athreyas"></div>
           <div class="team-role">VP of External Affairs</div>
           <div class="team-name">Aditi Athreyas</div>
         </div>
 
         <div class="team-card" onclick="openModal(this,'Gavin Lam','VP of Marketing & Communications','Major: Finance | Graduating: Fall 2028','https://www.linkedin.com/in/glam22/')">
-          <div class="team-photo"><img loading="lazy" decoding="async" src="headshots/gavin.png" alt="Gavin Lam"></div>
+          <div class="team-photo"><img loading="lazy" decoding="async" src="Downloads/website headshots/gavin.png" alt="Gavin Lam"></div>
           <div class="team-role">VP of Marketing & Comms</div>
           <div class="team-name">Gavin Lam</div>
         </div>
         <div class="team-card" onclick="openModal(this,'Pritam Hazra','VP of Operations','Major: Quantitative Business Economics | Minors: Finance &amp; Computer Science | Graduating: Spring 2027','https://www.linkedin.com/in/pritam-hazra/')">
-          <div class="team-photo"><img loading="lazy" decoding="async" src="headshots/pritam.png" alt="Pritam Hazra"></div>
+          <div class="team-photo"><img loading="lazy" decoding="async" src="Downloads/website headshots/pritam.png" alt="Pritam Hazra"></div>
           <div class="team-role">VP of Operations</div>
           <div class="team-name">Pritam Hazra</div>
         </div>
         <div class="team-card" onclick="openModal(this,'Dishita Bansal','Director of Finance','Majors: Psychological Sciences &amp; Economics | Graduating: Spring 2029','https://www.linkedin.com/in/dishitabansal07/')">
-          <div class="team-photo"><img loading="lazy" decoding="async" src="headshots/dishita.png" alt="Dishita Bansal"></div>
+          <div class="team-photo"><img loading="lazy" decoding="async" src="Downloads/website headshots/dishita.png" alt="Dishita Bansal"></div>
           <div class="team-role">Director of Finance</div>
           <div class="team-name">Dishita Bansal</div>
         </div>
         <div class="team-card" onclick="openModal(this,'Anuva Kota','Director of Engineering','Major: Computer Engineering | Minor: Mathematics | Graduating: Spring 2028','https://www.linkedin.com/in/anuvakota/')">
-          <div class="team-photo"><img loading="lazy" decoding="async" src="headshots/anuva.png" alt="Anuva Kota"></div>
+          <div class="team-photo"><img loading="lazy" decoding="async" src="Downloads/website headshots/anuva.png" alt="Anuva Kota"></div>
           <div class="team-role">Director of Engineering</div>
           <div class="team-name">Anuva Kota</div>
         </div>
         <div class="team-card" onclick="openModal(this,'Shruthi Arunkumar','Director of Software','Major: Computer Science | Graduating: Spring 2027','https://www.linkedin.com/in/shruthi-arunkumar')">
-          <div class="team-photo"><img loading="lazy" decoding="async" src="headshots/shruthi.png" alt="Shruthi Arunkumar"></div>
+          <div class="team-photo"><img loading="lazy" decoding="async" src="Downloads/website headshots/shruthi.png" alt="Shruthi Arunkumar"></div>
           <div class="team-role">Director of Software</div>
           <div class="team-name">Shruthi Arunkumar</div>
         </div>
       </div>
 
       <!-- Open Positions always below team -->
-      <div style="margin-top:80px;">
+      <div id="open-positions" style="margin-top:80px;">
         <h2 class="section-title">Open Positions</h2>
         <div class="positions-section">
 
-          <!-- Co-President & Treasurer block -->
+          <!-- Director block -->
+          <div style="border:1px solid rgba(123,47,190,0.45);border-radius:20px;padding:36px;margin-bottom:28px;background:rgba(123,47,190,0.08);">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:28px;flex-wrap:wrap;gap:16px;">
+              <div>
+                <div style="font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--purple-light);margin-bottom:6px;">Pillar Leadership</div>
+                <div style="font-family:'Montserrat',sans-serif;font-size:18px;font-weight:700;color:var(--white);">Director</div>
+              </div>
+              <a href="https://purdue.ca1.qualtrics.com/jfe/form/SV_2mbSYYqtgHahGnA" target="_blank" class="hero-btn" style="font-size:12px;padding:11px 28px;">Apply Now</a>
+            </div>
+            <div style="background:rgba(0,0,0,0.3);border-radius:12px;padding:20px 24px;margin-bottom:16px;">
+              <div class="position-title" style="margin-bottom:8px;">Director — Finance, Engineering, or Software</div>
+              <div class="position-desc">Oversees one of Momentum's three core pillars. Serves as a liaison between Project Managers and the President/VPs, supports all project teams within the pillar, coordinates workshops, and proactively addresses roadblocks. This is an active leadership role requiring consistent, hands-on engagement with your pillar's teams.</div>
+            </div>
+            <div style="display:flex;flex-wrap:wrap;gap:16px;font-family:'Figtree',sans-serif;font-size:13px;color:rgba(255,255,255,0.55);">
+              <span><strong style="color:rgba(255,255,255,0.8);">Priority Deadline:</strong> Apr 17th, 11:59 PM</span>
+              <span><strong style="color:rgba(255,255,255,0.8);">Interviews:</strong> Rolling</span>
+              <span><strong style="color:rgba(255,255,255,0.8);">Decisions:</strong> Apr 20th</span>
+            </div>
+          </div>
+
+          <!-- Project Manager block -->
+          <div style="border:1px solid rgba(123,47,190,0.25);border-radius:20px;padding:36px;margin-bottom:28px;background:rgba(123,47,190,0.04);">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;flex-wrap:wrap;gap:16px;">
+              <div>
+                <div style="font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--purple-light);margin-bottom:6px;">Team Leadership</div>
+                <div style="font-family:'Montserrat',sans-serif;font-size:18px;font-weight:700;color:var(--white);">Project Manager</div>
+              </div>
+              <span style="display:inline-block;background:rgba(123,47,190,0.15);border:1px solid rgba(123,47,190,0.3);color:rgba(255,255,255,0.4);padding:11px 28px;border-radius:50px;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;cursor:not-allowed;">Coming Soon</span>
+            </div>
+            <div class="position-desc">Leads a project team within a pillar. Drives deliverables, manages team dynamics, and coordinates with the Director to ensure progress throughout the semester. Applications open later this semester.</div>
+          </div>
+
+          <!-- General Member block -->
+          <div style="border:1px solid rgba(123,47,190,0.25);border-radius:20px;padding:36px;margin-bottom:28px;background:rgba(123,47,190,0.04);">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:20px;flex-wrap:wrap;gap:16px;">
+              <div>
+                <div style="font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--purple-light);margin-bottom:6px;">Member</div>
+                <div style="font-family:'Montserrat',sans-serif;font-size:18px;font-weight:700;color:var(--white);">General Member</div>
+              </div>
+              <span style="display:inline-block;background:rgba(123,47,190,0.15);border:1px solid rgba(123,47,190,0.3);color:rgba(255,255,255,0.4);padding:11px 28px;border-radius:50px;font-family:'Montserrat',sans-serif;font-size:12px;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;cursor:not-allowed;">Coming Soon</span>
+            </div>
+            <div class="position-desc">Contributes to a project team, building technical or leadership skills through hands-on work. No prior experience required — all motivated students are welcome. Applications open later this semester.</div>
+          </div>
+
+          <!-- CLOSED: Co-President & Treasurer block -->
           <div style="border:1px solid rgba(123,47,190,0.25);border-radius:20px;padding:36px;margin-bottom:28px;background:rgba(123,47,190,0.04);">
             <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:28px;flex-wrap:wrap;gap:16px;">
               <div>
-                <div style="font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--purple-light);margin-bottom:6px;">Leadership Roles</div>
+                <div style="font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--purple-light);margin-bottom:6px;">Executive Leadership Roles</div>
                 <div style="font-family:'Montserrat',sans-serif;font-size:18px;font-weight:700;color:var(--white);">Co-President & Treasurer</div>
               </div>
               <span class="hero-btn disabled" style="font-size:12px;padding:11px 28px;opacity:0.45;cursor:not-allowed;pointer-events:none;">Closed</span>
             </div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+            <div class="positions-grid">
               <div style="background:rgba(0,0,0,0.3);border-radius:12px;padding:20px 24px;">
                 <div class="position-title" style="margin-bottom:8px;">Co-President</div>
                 <div class="position-desc">Works alongside the President to lead Momentum's vision, strategy, and operations. Represents the organization externally and ensures cross-functional collaboration across the board.</div>
@@ -1342,12 +1401,12 @@ footer p {
           <div style="border:1px solid rgba(123,47,190,0.25);border-radius:20px;padding:36px;margin-bottom:28px;background:rgba(123,47,190,0.04);">
             <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:28px;flex-wrap:wrap;gap:16px;">
               <div>
-                <div style="font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--purple-light);margin-bottom:6px;">Vice President Roles</div>
+                <div style="font-family:'Montserrat',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--purple-light);margin-bottom:6px;">Senior Leadership Roles</div>
                 <div style="font-family:'Montserrat',sans-serif;font-size:18px;font-weight:700;color:var(--white);">VP Positions</div>
               </div>
               <span class="hero-btn disabled" style="font-size:12px;padding:11px 28px;opacity:0.45;cursor:not-allowed;pointer-events:none;">Closed</span>
             </div>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+            <div class="positions-grid">
               <div style="background:rgba(0,0,0,0.3);border-radius:12px;padding:20px 24px;">
                 <div class="position-title" style="margin-bottom:8px;">VP of External Affairs</div>
                 <div class="position-desc">Manages Momentum's relationships with external partners, sponsors, and the broader Purdue community. Leads outreach efforts and represents the organization externally.</div>
@@ -1386,27 +1445,27 @@ footer p {
         <h3 style="font-family:'Montserrat',sans-serif;font-size:14px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--gray);margin-bottom:32px;">Our Founders</h3>
         <div class="founders-grid" style="display:flex;flex-wrap:nowrap;justify-content:center;align-items:flex-start;gap:20px;max-width:1000px;margin:0 auto 80px;">
           <div class="team-card" onclick="openModal(this,'Tanek Malhotra','President & Co-Founder','Co-founded Momentum at Purdue in Spring 2025.','#')">
-            <div class="team-photo"><img loading="lazy" decoding="async" src="founders_headshots_website/tanek malhotra.png" alt="photo"></div>
+            <div class="team-photo"><img loading="lazy" decoding="async" src="Downloads/founders_headshots_website/tanek malhotra.png" alt="photo"></div>
             <div class="team-role">President</div>
             <div class="team-name">Tanek Malhotra</div>
           </div>
           <div class="team-card" onclick="openModal(this,'Carolina Sugane Hamada','Co-Founder','Co-founded Momentum at Purdue in Spring 2025.','#')">
-            <div class="team-photo"><img loading="lazy" decoding="async" src="founders_headshots_website/carolina.png" alt="photo"></div>
+            <div class="team-photo"><img loading="lazy" decoding="async" src="Downloads/founders_headshots_website/carolina.png" alt="photo"></div>
             <div class="team-role">Treasurer</div>
             <div class="team-name">Carolina Sugane Hamada</div>
           </div>
           <div class="team-card" onclick="openModal(this,'Hani Khan','Co-Founder','Co-founded Momentum at Purdue in Spring 2025.','#')">
-            <div class="team-photo"><img loading="lazy" decoding="async" src="founders_headshots_website/hani khan.png" alt="photo"></div>
+            <div class="team-photo"><img loading="lazy" decoding="async" src="Downloads/founders_headshots_website/hani khan.png" alt="photo"></div>
             <div class="team-role">VP of Finance</div>
             <div class="team-name">Hani Khan</div>
           </div>
           <div class="team-card" onclick="openModal(this,'Marina Mercedes San Martin Rossano','VP of Engineering','Co-founded Momentum at Purdue in Spring 2025.','https://www.linkedin.com/in/marina-sanmartin/')">
-            <div class="team-photo"><img loading="lazy" decoding="async" src="founders_headshots_website/marina mercedes.png" alt="photo"></div>
+            <div class="team-photo"><img loading="lazy" decoding="async" src="Downloads/founders_headshots_website/marina mercedes.png" alt="photo"></div>
             <div class="team-role">VP of Engineering</div>
             <div class="team-name">Marina Mercedes San Martin Rossano</div>
           </div>
           <div class="team-card" onclick="openModal(this,'Aditi Barla','Co-Founder','Co-founded Momentum at Purdue in Spring 2025.','#')">
-            <div class="team-photo"><img loading="lazy" decoding="async" src="founders_headshots_website/aditi barla.png" alt="photo"></div>
+            <div class="team-photo"><img loading="lazy" decoding="async" src="Downloads/founders_headshots_website/aditi barla.png" alt="photo"></div>
             <div class="team-role">VP of Software</div>
             <div class="team-name">Aditi Barla</div>
           </div>
