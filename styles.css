@@ -259,6 +259,21 @@ section { padding: 120px 48px; }
   color: var(--cyan);
 }
 
+.hero-notice {
+  margin: 0;
+  max-width: 34rem;
+  padding: 16px 24px;
+  border-radius: 16px;
+  border: 1px solid rgba(110, 214, 232, 0.38);
+  background: rgba(110, 214, 232, 0.1);
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.35;
+  color: var(--fg);
+  text-align: center;
+}
+
 .live-dot {
   width: 8px;
   height: 8px;
