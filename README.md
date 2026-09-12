@@ -15,7 +15,7 @@ Then open [http://127.0.0.1:43123](http://127.0.0.1:43123).
 
 ## What’s in the repo
 
-- `index.html` — full site (home, about, teams, projects, apply)
+- `index.html` — full site (home, about, teams, projects, positions)
 - `styles.css` — visual system matched to the momentum wordmark (black, white, pink / yellow / cyan)
 - `logo.png` — official wordmark
 - `404.html` — GitHub Pages fallback
